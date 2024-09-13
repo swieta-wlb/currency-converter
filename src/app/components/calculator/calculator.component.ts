@@ -24,7 +24,7 @@ export class CalculatorComponent implements OnInit {
 
   resultDisplayFn = (
     amount: number, code1: string, code2: string, res: number
-  ): string => `${amount} ${code1} = ${res} ${code1}`;
+  ): string => `${amount} ${code1} = ${res} ${code2}`;
 
   form: FormGroup = this.fb.group({
     amount: null,
