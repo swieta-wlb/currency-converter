@@ -1,0 +1,14 @@
+.table-header {
+  @media all and (max-width: 600px) {
+    flex-direction: column-reverse;
+  }
+
+  @media all and (max-width: 1000px) {
+   justify-content: start;
+  }
+}
+
+.date-container {
+  width: fit-content;
+  white-space: nowrap;
+}

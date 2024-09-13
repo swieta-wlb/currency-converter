@@ -1,0 +1,21 @@
+<div class="overflow-x-auto">
+  <table aria-label="Tabela">
+    <thead class="table-header">
+    <tr>
+      <th aria-label="Nazwa waluty">Nazwa waluty</th>
+      <th aria-label="Kod waluty">Kod waluty</th>
+      <th aria-label="Kurs średni">Kurs średni</th>
+    </tr>
+    </thead>
+    <tbody>
+      @for (item of data; track item) {
+        <tr [ngClass]="{'table-row-odd': $odd}">
+          <td [attr.aria-label]="item?.currency">{{ item?.currency }}</td>
+          <td [attr.aria-label]="item?.code">{{ item?.code }}</td>
+          <td [attr.aria-label]="item?.mid">{{ item?.mid }}</td>
+        </tr>
+      }
+    </tbody>
+  </table>
+</div>
+

@@ -1,0 +1,26 @@
+<div class="d-flex justify-content-center table-header gap-2">
+  <div class="d-block">
+    <button tabindex="1"
+            aria-label="Tabela A"
+            class="tab-button"
+            [ngClass]="{'tab-selected': selectedTable() === 'A'}"
+            (click)="changeTable.emit('A')">Tabela A
+    </button>
+    <button tabindex="1"
+            aria-label="Tabela B"
+            class="tab-button"
+            [ngClass]="{'tab-selected': selectedTable() === 'B'}"
+            (click)="changeTable.emit('B')">Tabela B
+    </button>
+  </div>
+
+  <div class="date-container">
+    <input tabindex="1" type="date" [formControl]="dateControl"/>
+
+    @if (dateControl.value) {
+      <button class="icon-button ms-1" (click)="dateControl.reset();showToday.emit()">
+        <i class="fa fa-close"></i> Wyczyść
+      </button>
+    }
+  </div>
+</div>

@@ -1,0 +1,34 @@
+<form [formGroup]="form" (submit)="calculate()">
+  <h1 class="text-center" aria-label="Kalkulator walutowy">Kalkulator walutowy</h1>
+  <div class="row my-3">
+    <div class="col-md-4 pe-md-0">
+      <label for="amount">Kwota</label>
+      <input tabindex="2" id="amount" name="amount" formControlName="amount" class="w-100" required/>
+    </div>
+    <div class="col-md-4 px-md-1">
+      <label for="currency1">Mam</label>
+      <select tabindex="2" name="currency1" id="currency1" formControlName="currency1" class="w-100" required>
+        <option [value]="{code: 'PLN'} | json">Polski Złoty</option>
+        @for (c of currencyCodes(); track c) {
+          <option [value]="c | json">{{ c.currency }}</option>
+        }
+      </select>
+    </div>
+    <div class="col-md-4 ps-md-0">
+      <label for="currency2">Chcę otrzymać</label>
+      <select tabindex="2" name="currency2" id="currency2" formControlName="currency2" class="w-100" required>
+        <option [value]="{code: 'PLN'} | json">Polski Złoty</option>
+        @for (c of currencyCodes(); track c) {
+          <option [value]="c | json">{{ c.currency }}</option>
+        }
+      </select>
+    </div>
+  </div>
+
+  <button tabindex="2" class="w-100">Przelicz</button>
+  @if (result(); as result) {
+    <div class="result-container">
+      {{ result }}
+    </div>
+  }
+</form>

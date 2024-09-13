@@ -1,0 +1,16 @@
+<button class="icon-button" (click)="setHighContrastMode()">
+  <i class="fa fa-eye-slash"></i>
+</button>
+
+<div class="table-container p-3">
+  <app-table-header [selectedTable]="selectedTable()"
+                    [selectedDate]="selectedDate()"
+                    (changeTable)="changeTable({table: $event})"
+                    (changeDate)="changeDate({date: $event})"
+                    (showToday)="getToday()"/>
+  <app-table [data]="data()"/>
+</div>
+
+<div class="calculator-container p-3">
+  <app-calculator [selectedTable]="selectedTable()"/>
+</div>

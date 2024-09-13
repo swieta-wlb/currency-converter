@@ -1,0 +1,138 @@
+$primary: #04043b;
+$secondary: #F7F8F8;
+$button: #cccccc;
+
+$highContrastPrimary: #fc0;
+$highContrastSecondary: #000;
+$highContrastButton: #fc0;
+
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+}
+
+.main-theme {
+  height: 100%;
+  background-color: $secondary;
+  overflow-y: scroll;
+
+  .table-header {
+    background-color: $secondary;
+  }
+
+  button {
+    background-color: $button;
+    color: $primary;
+    border-radius: 12px;
+    border: none;
+  }
+
+  table {
+    thead {
+      color: $primary;
+
+      th {
+        padding: 4px;
+      }
+    }
+
+    tbody {
+      tr {
+        &.table-row-odd {
+          background-color: $button;
+        }
+      }
+
+      td {
+        padding: 4px;
+      }
+    }
+  }
+
+  .tab {
+    &-button {
+      background-color: transparent;
+      border-radius: 0;
+    }
+
+    &-selected {
+      border-bottom: 2px solid $primary;
+    }
+  }
+
+
+  label {
+    font-size: 12px;
+    line-height: 14px;
+    font-weight: 400;
+  }
+
+  input, select {
+    border-radius: 6px;
+    height: 30px;
+    border: 1px solid $primary;
+  }
+
+  .icon-button {
+    background-color: $primary;
+    border: none;
+    color: $button;
+    padding: 6px 12px;
+    font-size: 12px;
+    cursor: pointer;
+  }
+}
+
+.high-contrast {
+  background-color: $highContrastSecondary;
+  color: white;
+
+  .table-header {
+    background-color: $highContrastSecondary;
+  }
+
+  .tab {
+    &-button {
+      background-color: transparent;
+      color: $highContrastButton;
+    }
+
+    &-selected {
+      border-bottom: 2px solid $highContrastButton;
+    }
+  }
+
+  button {
+    background-color: $highContrastButton;
+    color: $highContrastSecondary;
+  }
+
+  table {
+
+    thead {
+      color: $highContrastPrimary;
+    }
+
+    tbody {
+      tr {
+        &.table-row-odd {
+          background-color: $highContrastSecondary;
+        }
+      }
+    }
+  }
+
+  input, select {
+    border: 1px solid $highContrastButton;
+  }
+
+  .icon-button {
+    background-color: $highContrastButton;
+    color: $highContrastSecondary;
+  }
+}
+
+
